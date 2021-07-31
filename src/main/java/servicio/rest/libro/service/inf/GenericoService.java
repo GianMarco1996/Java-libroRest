@@ -11,7 +11,7 @@ public interface GenericoService<T> {
 	
 	List<T> findAll() throws ServiceException;
 	
-	Optional<T> findById(Long id) throws ServiceException;
+	//Optional<T> findById(Long id) throws ServiceException;
 	
 	T findById(T t) throws ServiceException;
 	

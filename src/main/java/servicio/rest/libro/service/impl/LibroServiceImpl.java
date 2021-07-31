@@ -29,10 +29,10 @@ public class LibroServiceImpl implements LibroService{
 		return this.getLibroRepository().findAll();
 	}
 
-	@Override
+	/*@Override
 	public Optional<Libro> findById(Long id) throws ServiceException {
 		return this.getLibroRepository().findById(id);
-	}
+	}*/
 
 	@Override
 	public void delete(Libro libro) throws ServiceException {

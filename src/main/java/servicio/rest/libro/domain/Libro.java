@@ -2,7 +2,11 @@ package servicio.rest.libro.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,20 +17,23 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity(name = "LIBRO")
+@Entity(name = "Libro")
+@Table(name = "LIBRO")
 public class Libro {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqLibro")
+	@SequenceGenerator(name = "seqLibro", allocationSize = 1, sequenceName = "SEQ_LIBRO")
 	@Column(name = "ID")
-	public Long id;
+	private Long id;
 	
 	@Column(name = "NOMBRE")
-	public String nombre;
+	private String nombre;
 	
 	@Column(name = "AUTOR")
-	public String autor;
+	private String autor;
 	
 	@Column(name = "ESTADO")
-	public String estado;
+	private String estado;
 
 }
